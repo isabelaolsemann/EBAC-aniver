@@ -1,0 +1,103 @@
+@use 'variables';
+
+.event {
+    padding: 90px 0;
+    background: variables.$darkColor;
+
+    &--frontend {
+        background: linear-gradient(
+            variables.$darkColor,
+            variables.$backgroundOverlay
+        );
+    }
+
+    &--ux-ui {
+        background: linear-gradient(
+            variables.$backgroundOverlay,
+            variables.$cardBackground
+        );
+    }
+
+    &--data-science {
+        background: linear-gradient(
+            variables.$cardBackground,
+            variables.$darkColor
+        );
+    }
+
+    &--footer {
+        background: linear-gradient(
+            variables.$backgroundOverlay,
+            variables.$darkColor
+        );
+    }
+
+    &--image-left {
+        .container {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__image {
+        max-width: 420px;
+        border-radius: variables.$radius;
+        border: 1px solid variables.$borderLight;
+        box-shadow: variables.$shadowSoft;
+    }
+
+    &__details {
+        max-width: 520px;
+        background: variables.$cardBackground;
+        padding: 28px;
+        border-radius: variables.$radius;
+        border: 1px solid variables.$borderLight;
+        backdrop-filter: blur(10px);
+        box-shadow: variables.$shadowStrong;
+
+        &__title {
+            font-size: variables.$fontLarge;
+            color: variables.$primaryColor;
+            margin-bottom: 12px;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+        }
+
+        &__description {
+            font-size: variables.$fontRegular;
+            color: variables.$textColor;
+            line-height: 1.6;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            gap: 30px;
+        }
+
+        &__image {
+            max-width: 320px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .container {
+            display: block;
+            text-align: center;
+        }
+
+        &__image {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        &__details {
+            margin: 0 auto 20px;
+            width: 100%;
+        }
+    }
+}

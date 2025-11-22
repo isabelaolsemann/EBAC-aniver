@@ -1,0 +1,50 @@
+@use '../variables';
+
+.infos-bar {
+    padding: 18px 28px;
+    background: variables.$cardBackground;
+    backdrop-filter: blur(10px);
+    border: 1px solid variables.$borderLight;
+    border-radius: 3rem;
+    box-shadow: variables.$shadowSoft;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: variables.$transition;
+
+    &__infos {
+        display: flex;
+        gap: 40px;
+
+        &__item {
+            font-size: variables.$fontSmall;
+            color: variables.$textColor;
+
+            b {
+                color: variables.$primaryColor;
+                font-size: variables.$fontMedium;
+                display: block;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__infos {
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+        text-align: center;
+
+        &__infos {
+            display: block;
+
+            &__item {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

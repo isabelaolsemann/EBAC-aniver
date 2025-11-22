@@ -1,0 +1,46 @@
+@use '../variables';
+
+.button {
+    padding: 14px 22px;
+    font-size: variables.$fontMedium;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: variables.$radius;
+    border: 1px solid variables.$borderLight;
+    background: variables.$cardBackground;
+    color: variables.$primaryColor;
+    backdrop-filter: blur(12px);
+    box-shadow: variables.$shadowSoft;
+    transition: variables.$transition;
+    display: inline-block;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: variables.$shadowStrong;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &--primary {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 220, 255, 0.25),
+            rgba(180, 140, 255, 0.22)
+        );
+        color: variables.$primaryColor;
+        border: 1px solid variables.$borderLight;
+    }
+
+    @media (max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+}
